@@ -20,13 +20,6 @@ from quickstart import SCOPES
 
 
 def send_message_with_attachment():
-    """Create and send an email with attachment.
-       Print the returned sent message id.
-
-      Load pre-authorized user credentials from the environment.
-      TODO(developer) - See https://developers.google.com/identity
-      for guides on implementing OAuth2 for the application.
-    """
     creds = None
     # The file token.json stores the user's access and refresh tokens, and is
     # created automatically when the authorization flow completes for the first
@@ -64,7 +57,7 @@ def send_message_with_attachment():
         )
 
         # attachment
-        attachment_filename = 'Arjun Resume.pdf'
+        attachment_filename = 'Arjun\'s Resume.pdf'
         # guessing the MIME type
         type_subtype, _ = mimetypes.guess_type(attachment_filename)
         maintype, subtype = type_subtype.split('/')
@@ -88,37 +81,36 @@ def send_message_with_attachment():
     return send_message
 
 
-def build_file_part(file):
-    """Creates a MIME part for a file.
-
-    Args:
-      file: The path to the file to be attached.
-
-    Returns:
-      A MIME part that can be attached to a message.
-    """
-    content_type, encoding = mimetypes.guess_type(file)
-
-    if content_type is None or encoding is not None:
-        content_type = 'application/octet-stream'
-    main_type, sub_type = content_type.split('/', 1)
-    if main_type == 'text':
-        with open(file, 'rb'):
-            msg = MIMEText('r', _subtype=sub_type)
-    elif main_type == 'image':
-        with open(file, 'rb'):
-            msg = MIMEImage('r', _subtype=sub_type)
-    elif main_type == 'audio':
-        with open(file, 'rb'):
-            msg = MIMEAudio('r', _subtype=sub_type)
-    else:
-        with open(file, 'rb'):
-            msg = MIMEBase(main_type, sub_type)
-            msg.set_payload(file.read())
-    filename = os.path.basename(file)
-    msg.add_header('Content-Disposition', 'attachment', filename=filename)
-    msg.attach()
-    return msg
+# def build_file_part(file):
+#     """Creates a MIME part for a file.
+#
+#     Args:
+#       file: The path to the file to be attached.
+#
+#     Returns:
+#       A MIME part that can be attached to a message.
+#     """
+#     content_type, encoding = mimetypes.guess_type(file)
+#
+#     if content_type is None or encoding is not None:
+#         content_type = 'application/octet-stream'
+#     main_type, sub_type = content_type.split('/', 1)
+#     if main_type == 'text':
+#         with open(file, 'rb'):
+#             msg = MIMEText('r', _subtype=sub_type)
+#     elif main_type == 'image':
+#         with open(file, 'rb'):
+#             msg = MIMEImage('r', _subtype=sub_type)
+#     elif main_type == 'audio':
+#         with open(file, 'rb'):
+#             msg = MIMEAudio('r', _subtype=sub_type)
+#     else:
+#         with open(file, 'rb'):
+#             msg = MIMEBase(main_type, sub_type)
+#             msg.set_payload(file.read())
+#     filename = os.path.basename(file)
+#     msg.add_header('Content-Disposition', 'attachment', filename=filename)
+#     return msg
 
 
 if __name__ == '__main__':
