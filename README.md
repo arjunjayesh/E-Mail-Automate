@@ -1,3 +1,3 @@
 # E-Mail-Automate
 
-Python script to send customized e-mails to multiple users using G-Mail API. 
+Python script to send e-mail using G-Mail API.
