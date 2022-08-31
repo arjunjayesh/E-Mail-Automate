@@ -19,7 +19,7 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 # from oauth2client.client import Credentials
 from google.oauth2.credentials import Credentials
-
+from jinja2 import Template
 from quickstart import SCOPES
 
 
@@ -61,7 +61,7 @@ def send_message_with_attachment(receiver, sub, content, content_html):
         mime_message.add_alternative(content_html, subtype='html')
 
         # attachment
-        attachment_filename = 'Resume & Cover Letter - Arjun Jayesh.pdf'
+        attachment_filename = 'Arjun\'s Resume & Cover Letter.pdf'
 
         # guessing the MIME type
         type_subtype, _ = mimetypes.guess_type(attachment_filename)
@@ -102,10 +102,10 @@ if __name__ == '__main__':
     """
 
     # HTML Content
-    content_html = """\
+    content_html = f"""\
 <html>
   <body>
-    <p>Hi</p>
+    <p>{{name}}</p>
     <p>
         Click here to visit <a href="http://www.google.co.in">Google</a> Website.
     </p>
@@ -114,4 +114,6 @@ if __name__ == '__main__':
 """
     for key, value in mailing_list.items():
         print("Sent to %s" % key)
+        tm = Template("Hello {{name}}") # Jinja Template
+        content_html = tm.render(name=name) # Jinja Render
         send_message_with_attachment(value, sub, content %key, content_html)
