@@ -114,6 +114,8 @@ if __name__ == '__main__':
 """
     for key, value in mailing_list.items():
         print("Sent to %s" % key)
-        tm = Template("Hello {{name}}") # Jinja Template
-        content_html = tm.render(name=name) # Jinja Render
+
+        tm = Template("Hello {{name}}") # Initialize Jinja object tm
+        content_html = tm.render(name=name) # Render Jinja to content_html
+
         send_message_with_attachment(value, sub, content %key, content_html)
