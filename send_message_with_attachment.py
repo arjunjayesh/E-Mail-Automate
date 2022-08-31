@@ -1,4 +1,5 @@
 from __future__ import print_function
+from fileinput import filename
 
 import os.path
 from google.auth.transport.requests import Request
@@ -13,7 +14,7 @@ from email.mime.image import MIMEImage
 from email.mime.text import MIMEText
 from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
-from oauth2client.client import Credentials
+# from oauth2client.client import Credentials
 from google.oauth2.credentials import Credentials
 
 from quickstart import SCOPES
@@ -64,7 +65,7 @@ def send_message_with_attachment():
 
         with open(attachment_filename, 'rb') as fp:
             attachment_data = fp.read()
-        mime_message.add_attachment(attachment_data, maintype, subtype)
+        mime_message.add_attachment(attachment_data, maintype, subtype, filename=attachment_filename) # Filename issue fix => Just added filename argument
 
         encoded_message = base64.urlsafe_b64encode(mime_message.as_bytes()).decode()
 
