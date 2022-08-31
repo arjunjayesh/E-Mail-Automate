@@ -48,7 +48,7 @@ def send_message_with_attachment(receiver, sub, content):
 
         # headers
         mime_message['To'] = receiver
-        mime_message['From'] = 'Test <pythontestarjun@gmail.com>'
+        mime_message['From'] = 'Test <from@email.com>' #From E-Mail ID
         mime_message['Subject'] = sub
 
         # text
@@ -82,16 +82,16 @@ def send_message_with_attachment(receiver, sub, content):
 
 if __name__ == '__main__':
     mailing_list = {
-        "Arjun": "<9997arjun@gmail.com>",
-    }
-    sub = "Automated Test E-Mail"
+        "Name": "<name@email.com>",
+    } # Mailing List as Dictionary
+    sub = "Automated Test E-Mail" # Subject Line
     content = """Hi %s, 
     
 This is an Automated Test E-Mail. 
     
-Regards
-Arjun Jayesh
-"""
+Thanks
+Name
+""" # Formatted Content
     for key,value in mailing_list.items():
         print("Sent to %s"%key)
         send_message_with_attachment(value, sub, content %key)
