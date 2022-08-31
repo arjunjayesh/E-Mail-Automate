@@ -1,6 +1,6 @@
 ### E-Mail-Automate
 
-##Python script to send e-mail using G-Mail API.
+## Python script to send e-mail using G-Mail API.
 
 - List used initially for Mailing List
 - Mailing List updated to Dictionary
