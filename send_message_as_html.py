@@ -100,19 +100,6 @@ if __name__ == '__main__':
 
 Hope you are doing fine. 
  
-I am reaching out to you in regards to career opportunities at UST and found your contact from LinkedIn. I think my skills could bring in a lot of value to your organization. 
-  
-My roots are from a computer science background and I am currently looking for opportunities that would help me transform my career by transitioning into the development. 
- 
-I have been preparing for this transition by taking up internships and upskilling. Currently, I am working on Django and would be working on flask the end of this month.
-
-Do visit my GitHub page to see what I am working on right now. Further, you can also find me on LinkedIn to learn more comprehensively about my experience. Please find my resume and cover letter attached. 
-
-LinkedIn: https://www.linkedin.com/in/arjunjayesh
-GitHub: https://github.com/arjunjayesh
-E-Mail: 9997arjun@gmail.com
-Phone: +91 70129 36126
- 
 Hoping to get in touch with you soon. 
  
 Kind Regards,
@@ -129,24 +116,11 @@ Arjun Jayesh
           <body>
             <p>Hello {key.split(' ')[0]},</p>
             <p>Hope you are doing fine.</p>
-
-            <p>I am reaching out to you in regard to career opportunities at UST and found your contact from <a href="https://www.linkedin.com/in/arjunjayesh">LinkedIn</a>. I think my skills could bring in a lot of value to your organization.</p>
-            
-            <p>My roots are from a computer science background and I am currently looking for opportunities that would help me transform my career by transitioning into the development.</p>
-            
-            <p>I have been preparing for this transition by taking up internships and upskilling. Currently, I am working on Django and would be working on flask the end of this month.</p>
-            
-            <p>Do visit my <a href="https://github.com/arjunjayesh">GitHub</a> page to see what I am working on right now. Further, you can also find me on <a href="https://www.linkedin.com/in/arjunjayesh">LinkedIn</a> to learn more comprehensively about my experience.</p>
-            
-            <p>Please find my resume and cover letter attached for your reference.</p>
             
             <p>Hoping to get in touch with you soon.</p>
 
             <p>
                 Regards<br>Arjun Jayesh<br><br>
-                <a href="https://www.linkedin.com/in/arjunjayesh">LinkedIn</a> | <a href="https://github.com/arjunjayesh">GitHub</a>
-                <br>
-                <a href="mailto:9997arjun@gmail.com">E-Mail</a> | <a href="https://wa.me/+917012936126">+91 70129 36126</a>
             </p>
           </body>
         </html>
