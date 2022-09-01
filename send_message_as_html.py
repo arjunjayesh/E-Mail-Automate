@@ -19,7 +19,6 @@ from googleapiclient.discovery import build
 from googleapiclient.errors import HttpError
 # from oauth2client.client import Credentials
 from google.oauth2.credentials import Credentials
-from jinja2 import Template
 from quickstart import SCOPES
 
 
@@ -152,8 +151,5 @@ Arjun Jayesh
           </body>
         </html>
         """
-        # name = key
-        # tm = Template("{{name}}")  # Initialize Jinja object tm
-        # content_html = tm.render(name=name)  # Render Jinja to content_html
 
         send_message_with_attachment(value, sub, content % key, content_html)
